@@ -2,13 +2,22 @@ CAS D'UTILISATION
 
 1. Alice (apprentie) se connecte sur UberSchool, cherche sur le map les conducteurs qui sont à proximité, choisit Bob et ensuite un créneau parmis les créneaux disponibles. 
 Elle choisit de définir un parcours. Elle saisit "place Jussieu" dans le formulaire, puis "Le Dôme de Paris", "IKEA Vélizy", et "Parc de Sceaux". Elle valide le formulaire.
-La route est affichée sur la map, l'application vérifie que la durée du parcours est inférieure à 90 minutes et affiche un message de confirmation. Un mail contenant les coordonnées (address mail, numéro de téléphone) d'Alice ainsi que l'heure du rendez-vous est envoyé à Bob. L'application met à jour les disponibilités de Bob et les réservations, et sauvegarde le parcours.
+La route est affichée sur la map, l'application vérifie que la durée du parcours est inférieure à 90 minutes et affiche un message de confirmation. Un mail contenant les
+coordonnées (address mail, numéro de téléphone) d'Alice ainsi que l'heure du rendez-vous est envoyé à Bob. L'application met à jour les disponibilités de Bob et les 
+réservations, et sauvegarde le parcours.
 
-2. Max (apprenti) se connecte sur UberSchool et choisit un parcours parmi ceux proposés par l'application. La route est affichée sur la map. Ensuite il choisit Bob dans la liste des conducteurs qui offrent cette route. Les créneaux disponibles du conducteur sont affichés et Max choisit un créneau, puis valide le formulaire. L'application vérifie que Max n'a pas d'autre rendez-vous la même heure. Un mail contenant les coordonnées (address mail, numéro de téléphone) de Max ainsi que l'heure du rendez-vous est envoyé à Bob. L'application met à jour les disponibilités de Bob, les réservations et le nombre de fois que le parcours a été choisi. 
+2. Max (apprenti) se connecte sur UberSchool et choisit un parcours parmi ceux proposés par l'application. La route est affichée sur la map. Ensuite il choisit Bob dans 
+la liste des conducteurs qui offrent cette route. Les créneaux disponibles du conducteur sont affichés et Max choisit un créneau, puis valide le formulaire. L'application
+vérifie que Max n'a pas d'autre rendez-vous la même heure. Un mail contenant les coordonnées (address mail, numéro de téléphone) de Max ainsi que l'heure du rendez-vous est
+envoyé à Bob. L'application met à jour les disponibilités de Bob, les réservations et le nombre de fois que le parcours a été choisi. 
 
-3. Bob (conducteur) se connecte sur UberSchool, il choisit de renseigner ces disponibilités pour le mois d'Avril. Il choisit "lundi", "15:00" et "18:00", et il valide le formulaire. L'application met à jour la base des données. Puis il choisit de renseigner les routes qu'il offre. Il choisit d'ajouter la "route1" et la "route2", qu'il charche dans la liste des routes sauvegardées dans la base de données de l'application, valide l'opération, il choisit "route3" dans la liste des routes qu'il offre et sélectionne "supprimmer". L'application met à jour la base de données et la page affichée sur le browser de Bob. 
+3. Bob (conducteur) se connecte sur UberSchool, il choisit de renseigner ces disponibilités pour le mois d'Avril. Il choisit "lundi", "15:00" et "18:00", et il valide le
+formulaire. L'application met à jour la base des données. Puis il choisit de renseigner les routes qu'il offre. Il choisit d'ajouter la "route1" et la "route2", qu'il charche
+dans la liste des routes sauvegardées dans la base de données de l'application, valide l'opération, il choisit "route3" dans la liste des routes qu'il offre et sélectionne
+"supprimmer". L'application met à jour la base de données et la page affichée sur le browser de Bob. 
 
-4. Alice (apprentie) se connecte sur UberSchool et choisit un conducteur parmi ceux avec lesquels elle a pris un rendez-vous pour le noter. Elle le note avec 4 étoiles et choisit d'écrire un commentaire. L'application sauvegarde le commentaire qui est affiché sur la page du profil du conducteur.  
+4. Alice (apprentie) se connecte sur UberSchool et choisit un conducteur parmi ceux avec lesquels elle a pris un rendez-vous pour le noter. Elle le note avec 4 étoiles et
+choisit d'écrire un commentaire. L'application sauvegarde le commentaire qui est affiché sur la page du profil du conducteur.  
 
 
 
@@ -24,7 +33,8 @@ DONNEES
 
 API 
 
-L'API google maps est utilisé pour visualiser la localisation des conducteurs et afficher les routes. L'API Distance Matrix est utilisé pour calculer la distance entre les localisations d'un apprenti et des conducteurs afin de suggérer les conducteurs qui se trouvent à la proximité de l'apprenti.  
+L'API google maps est utilisé pour visualiser la localisation des conducteurs et afficher les routes. L'API Distance Matrix est utilisé pour calculer la distance entre les
+localisations d'un apprenti et des conducteurs afin de suggérer les conducteurs qui se trouvent à la proximité de l'apprenti.  
 ----------> site de la documentation: 
 https://developers.google.com/maps/documentation/distance-matrix/overview
 https://github.com/googlemaps/google-maps-services-java
@@ -35,8 +45,12 @@ https://developers.google.com/maps/documentation/embed/embedding-map
 FONCTIONNALITES
 
 L'application offre deux interfaces utilisateur, un pour les apprentis et un pour les conducteurs. 
-Les apprentis peuvent prendre un rendez-vous avec un conducteur pour effectuer un certain parcours. Ils créent le parcours en donnant les endroits où il passe. Le parcours est sauvegardé par l'application et est disponible pour tous les utilisateurs du site. Ainsi les apprentis peuvent soit choisir un parcours existant ou créer un autre. L'application liste les parcours selon leur popularité, qui est calculée en fonction du nombre qu'un parcours a été choisit. Les apprentis peuvent aussi écrire des commentaires sur le profil d'un conducteur et lui noter. 
-L'application propose les conducteurs qui offrent un certain parcours ou ceux qui se trouvent à la proximité d'un apprenti. Elle affiche leur localisation sur la map et met en évidence leur disponibilité au moment de la consultation du site. 
+Les apprentis peuvent prendre un rendez-vous avec un conducteur pour effectuer un certain parcours. Ils créent le parcours en donnant les endroits où il passe. Le parcours 
+est sauvegardé par l'application et est disponible pour tous les utilisateurs du site. Ainsi les apprentis peuvent soit choisir un parcours existant ou créer un autre.
+L'application liste les parcours selon leur popularité, qui est calculée en fonction du nombre qu'un parcours a été choisit. Les apprentis peuvent aussi écrire des 
+commentaires sur le profil d'un conducteur et lui noter. 
+L'application propose les conducteurs qui offrent un certain parcours ou ceux qui se trouvent à la proximité d'un apprenti. Elle affiche leur localisation sur la map 
+et met en évidence leur disponibilité au moment de la consultation du site. 
 
 Les conducteurs peuvent gérer leur disponibilités et sélectionner les parcours qu'ils peuvent offrir. Ils peuvent aussi annuler un rendez-vous. 
 
@@ -44,29 +58,39 @@ Les conducteurs peuvent gérer leur disponibilités et sélectionner les parcour
 
 MISE A JOUR DES DONNES
 
-Le serveur appele régulièrement l'API Distance Matrix de google maps pour vérifier qu'il n'y a pas de perturbations sur les parcours qui sont programmés pour les prochaines deux heures. Dans le cas échéant, elle notifie les conducteur et les apprentis concernés en leur envoyant un mail qui propose une modification du parcours. En particumier, il est vérifié que tous les endroits du parcours sont accessibles et que la durée maximale de la route est 1h30min.  
+Le serveur appele régulièrement l'API Distance Matrix de google maps pour vérifier qu'il n'y a pas de perturbations sur les parcours qui sont programmés pour les prochaines
+deux heures. Dans le cas échéant, elle notifie les conducteur et les apprentis concernés en leur envoyant un mail qui propose une modification du parcours. En particumier, 
+il est vérifié que tous les endroits du parcours sont accessibles et que la durée maximale de la route est 1h30min.  
 
 
 
 COMPOSANTS DU SERVEUR
 
 Le serveur génère une page qui correspond au profil de l'utilisateur (page des apprentis ou des conducteurs). Il consiste à des différents composants qui 
-1) gèrent la réservation d'un rendez-vous. Vérifient qu'il n'y a pas plusieurs utilisateurs qui essaient de réserver le même conducteur pour le même creneau et que les rendez-vous d'un apprenti ne se chevauchent. pendant une réservation des parcours sont sauvegarder dans la base de données et leur popularité est mise à jour. 
+1) gèrent la réservation d'un rendez-vous. Vérifient qu'il n'y a pas plusieurs utilisateurs qui essaient de réserver le même conducteur pour le même creneau et que les 
+rendez-vous d'un apprenti ne se chevauchent. pendant une réservation des parcours sont sauvegarder dans la base de données et leur popularité est mise à jour. 
 2) mettent à jours la disponibilité d'un parcours et notifient les utilisateurs
 3) suggèrent les conducteur autour d'un point sur la map et calculent la liste des conducteurs qui sont disponibles au moment de la consultation du site
 4) génèrent la page contenant les informations qui concernent un conducteur (ses disponibilités et les routes qu'il offre)
 5) génèrent la liste des parcours triée par leur popularité
 6) génèrent la liste des conducteurs qui offre un certain parcours
 7) Sauvegardent des commentaires et calculent la note d'un conducteur.
-8) créent des cookies pour sauvegarder les id des conducteurs qui se trouvent près de l'addresse d'un apprenti, qui sont affichés par défaut sur la map au moment de la consultation du site
+8) créent des cookies pour sauvegarder les id des conducteurs qui se trouvent près de l'addresse d'un apprenti, qui sont affichés par défaut sur la map au moment de la 
+consultation du site
 
 
 
 CLIENT
 
-Sur la page d'acceuil des apprentis un map s'affiche initialisée à l'addresse renseignée dans son profil, qui contient des markers sur la localisation des conducteurs. Des markers différents sont affichés pour les conducteurs qui sont disponibles au moment de la consultation du site. L'utilisateur peut se naviguer sur la map et demander d'afficher les conducteurs d'une certaine region. L'interface propose dans le menu principal d'afficher les parcours disponibles, de créer un nouveau parcours ou de modifier le profil utilisateur. L'utilisateur peut sélectionner un marker sur la map pour visualiser la page du conducteur, qui contient ces disponibilités, la liste des routes qu'il offre, les commantaires écrits par les utilisateur, son expérience et sa note. Si un parcours existant est choisi, la route s'affiche sur le map, ainsi que la liste des conducteurs qu'il l'offre. 
+Sur la page d'acceuil des apprentis un map s'affiche initialisée à l'addresse renseignée dans son profil, qui contient des markers sur la localisation des conducteurs. 
+Des markers différents sont affichés pour les conducteurs qui sont disponibles au moment de la consultation du site. L'utilisateur peut se naviguer sur la map et demander
+d'afficher les conducteurs d'une certaine region. L'interface propose dans le menu principal d'afficher les parcours disponibles, de créer un nouveau parcours ou de modifier 
+le profil utilisateur. L'utilisateur peut sélectionner un marker sur la map pour visualiser la page du conducteur, qui contient ces disponibilités, la liste des routes qu'il
+offre, les commantaires écrits par les utilisateur, son expérience et sa note. Si un parcours existant est choisi, la route s'affiche sur le map, ainsi que la liste des
+conducteurs qu'il l'offre. 
 
-La page des conducteurs contient les informations de ses profil, leur addresse, leur nom d'utilisateur et mot de passe, leur disponibilités pour le mois en cours, les parcours qu'ils ont sauvegardés. Toutes ces informations sont modifiables. 
+La page des conducteurs contient les informations de ses profil, leur addresse, leur nom d'utilisateur et mot de passe, leur disponibilités pour le mois en cours, 
+les parcours qu'ils ont sauvegardés. Toutes ces informations sont modifiables. 
 
 
 
